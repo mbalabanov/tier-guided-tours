@@ -15,3 +15,5 @@ This feature provides users with the option to book guided tours across town wit
 During the tour, users can get turn-by-turn navigation when a user's phone is secured in the charging tray on the Tier scooter (BTW, the charging tray is a unique feature of Tier.)
 
 Users can contact the tour guide and get warnings if they or their friends have accidentally left the tour route.
+
+Please find the concept sketches that I created before the implementation here: https://github.com/mbalabanov/tier-guided-tours/blob/main/tier-guided-tours-marin-balabanov.pdf
