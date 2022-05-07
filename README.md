@@ -7,6 +7,8 @@ The solution presented in this repository was created using Tumult Hype 4. The s
 
 Of course, you can clone the repository and run _tier-guided-tours.html_ locally.
 
+![Tier Guided Tours](screenshots/tier-tours-feature-overview.png)
+
 ## The Solution
 This feature provides users with the option to book guided tours across town with their friends and a tour guide. It offers infos about the tour, instructions and map routes.
 
