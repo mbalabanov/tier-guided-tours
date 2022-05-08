@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Add a line to a map using a GeoJSON source</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaW5iYWxhYmFub3YiLCJhIjoiY2wycnlhY3IyMDdmajNjbWd4NDAzMXFqbiJ9.6Trple0Qp7CGYvZPW8MtGw';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [7.0081, 51.1603],
+        zoom: 14
+    });
+
+    map.on('load', () => {
+        map.addSource('route', {
+            'type': 'geojson',
+            'data': {
+   "type":"Feature",
+   "properties":{
+      "name":"codecentric Building",
+      "stroke":"#000000",
+      "fill":"#00FFOO"
+   },
+   "geometry":{
+      "type":"Polygon",
+      "coordinates":[
+         [
+            [
+               7.006809711456299,
+               51.16226147111774
+            ],
+            [
+               7.007013559341431,
+               51.16177030731626
+            ],
+            [
+               7.007228136062622,
+               51.16180394883936
+            ],
+            [
+               7.017026970386505,
+               51.16229679434027
+            ],
+            [
+               7.006809711456399,
+               51.16226147119774
+            ]
+         ]
+      ]
+   }
+            }
+        });
+        map.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': 'route',
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            'paint': {
+                'line-color': '#888',
+                'line-width': 8
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
